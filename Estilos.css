@@ -1,0 +1,139 @@
+
+/*----------------------Menu-----------------------*/
+.list-menu{
+  list-style-type: none;
+  margin: 4;
+  padding: 4;  
+}
+
+ul{  
+  background-color: #2e8dfa;
+  height: 40px;
+  width:120%;
+  list-style-type: none;
+  margin: 20px;
+  padding: 30px,;
+  display: flex;  
+}
+
+ul li {
+  float: left;
+  margin: 10px;
+  padding: 0;
+  align-self: center;
+  position: relative;
+}
+
+ul li a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  transition: background 0.3s;
+}
+
+ul li a:hover{
+  display: block;
+  text-align: center;
+  color:#f3778b;
+}
+
+body{
+  background-color: #ffffff;
+  padding-left: 30px;
+}
+
+
+
+
+/*------------------Banner_img-------------------*/
+
+
+
+
+
+.container {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.container img {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  opacity: 0;
+  animation: slide 12s infinite;
+}
+.banner img.active {
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+
+.text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  overflow: hidden;
+  top: 90%;
+  left: 0%;
+}
+
+
+
+
+
+/*-------------------------Sobre--------------------------*/
+
+
+
+
+
+
+
+
+.body-sobre {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: white;
+}
+
+.body-sobre::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("voluntariado.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(6px);    
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+@media (max-width: 800px) 
+{
+  .body-sobre 
+  {
+    background-attachment: scroll;
+    filter: blur(4px);
+  }
+}
+
