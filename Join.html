@@ -1,26 +1,95 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
-  <head>
+<html lang="pt">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junte-se às Equipas — Associação de Voluntariado de Setúbal</title>
+    <link rel="stylesheet" type="text/css" href="Estilos.css">
     <link rel="icon" type="image/png" href="AVS-logo.png">
-      <title>
-        AVS - Doar
-      </title>
-    <link rel="stylesheet" href="Estilos.css">
-  </head>
+</head>
 
-  <body class="body-doar">
-    <h1>Associação de voluntariado de Setúbal</h1>
-        
+<body class="body-join">
+    <h1>Associação de Voluntariado de Setúbal</h1>
+
     <nav class="nav">
-      <ul class="list-menu">
-        <li><a href="Home.html">Inicio</a></li>
-        <li><a href="Eventos.html">Eventos</a></li>
-        <li><a href="Doar.html">Doar</a></li>
-        <li><a href="Sobre.html">Sobre nós</a></li>
-        <li><a href="Join.html">Junte-se ás equipas</a></li>
-      </ul>
+        <ul class="list-menu">
+            <li><a href="Home.html">Início</a></li>
+            <li><a href="Eventos.html">Eventos</a></li>
+            <li><a href="Doar.html">Doar</a></li>
+            <li><a href="Sobre.html">Sobre nós</a></li>
+            <li><a href="Join.html" class="active">Junte-se às equipas</a></li>
+        </ul>
     </nav>
-  </body>
+<section class="hero-join">
+    <h1 class="hero-title">Faça Parte das Nossas Equipas</h1>
+    <p class="hero-subtitle">Junte-se a nós e transforme a comunidade de Setúbal!</p>
+</section>
+
+    <section class="intro">
+        <h2>Faça parte das nossas equipas de voluntariado</h2>
+        <p>
+            Acreditamos que cada gesto faz a diferença. Seja qual for a sua experiência,
+            há um lugar para si nas nossas equipas. Junte-se a nós e ajude a transformar
+            a comunidade de Setúbal num lugar melhor!
+        </p>
+    </section>
+
+    <section class="areas">
+        <h2>Áreas de voluntariado</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Apoio Social</h3>
+                <p>Distribuição de alimentos, visitas a famílias e apoio a pessoas em situação vulnerável.</p>
+            </div>
+
+            <div class="card">
+                <h3>Educação</h3>
+                <p>Aulas de reforço, oficinas de leitura e atividades educativas com crianças e jovens.</p>
+            </div>
+
+            <div class="card">
+                <h3>Eventos e Campanhas</h3>
+                <p>Ajude-nos na organização de eventos solidários, campanhas de recolha e feiras de adoção.</p>
+            </div>
+
+            <div class="card">
+                <h3>Comunicação</h3>
+                <p>Criação de conteúdo, fotografia, redes sociais e divulgação das nossas ações.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2>Inscreva-se como voluntário</h2>
+        <p>Preencha o formulário e entraremos em contacto consigo.</p>
+
+        <form action="#" method="post" class="join-form">
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone">
+
+            <label for="area">Área de interesse:</label>
+            <select id="area" name="area">
+                <option value="apoio">Apoio Social</option>
+                <option value="educacao">Educação</option>
+                <option value="eventos">Eventos e Campanhas</option>
+                <option value="comunicacao">Comunicação</option>
+            </select>
+
+            <label for="mensagem">Mensagem (opcional):</label>
+            <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+
+            <button type="submit">Enviar candidatura</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>2025 Associação de Voluntariado de Setúbal.</p>
+    </footer>
+</body>
 </html>
+
