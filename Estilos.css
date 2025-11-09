@@ -9,11 +9,6 @@ body{
 
 
 
-
-
-
-
-
 /*----------------------Menu-----------------------*/
 .list-menu{
   list-style-type: none;
@@ -28,8 +23,9 @@ ul{
   display: flex;  
   justify-content: flex-start;
   align-items: center;
-  height: 60px;
-  width: 100%; 
+  height: 100px;
+  width: 100%;
+ 
 }
 
 ul li {
@@ -38,6 +34,12 @@ ul li {
   padding: 0;
   align-self: center;
   position: relative;
+}
+ul li img{
+  align-self: center;
+  position: relative;
+  height: 80px;
+  width: 80px;
 }
 
 ul li a{
@@ -52,7 +54,7 @@ ul li a{
 ul li a:hover{
   display: block;
   text-align: center;
-  color:#f3778b;
+  color:#f3cc77;
 }
 
 body{
@@ -70,7 +72,7 @@ body{
 .container {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 400px;
   overflow: hidden;
 }
 
@@ -118,12 +120,7 @@ body{
 
 
 
-
 /*-------------------------Sobre--------------------------*/
-
-
-
-
 
 
 .body-sobre {
@@ -149,13 +146,47 @@ body{
   z-index: -1;
 }
 
-@media (max-width: 800px) 
-{
 
+
+/*-------------------------Eventos--------------------------*/
+.eventos-container {
+width: 80%;
+margin: auto;
+margin-top: 30px;
+}
+
+.eventos-cartao {
+background: #fff;
+padding: 20px;
+margin-bottom: 20px;
+border-radius: 5px;
+box-shadow: 0 0 5px hsla(118, 66%, 40%, 0.5);
+}
+
+.eventos-event {
+border-left: 5px solid #4CAF50;
+padding-left: 15px;
+margin-bottom: 20px;
+width: 49%;
+background: #fff;
+border-radius: 5px;
+box-shadow: 0 0 5px rgba(0,0,0,0.1);
+box-sizing: border-box;
+}
+
+
+
+/*-------------------------Medias-etc--------------------------*/
+
+@media (max-width: 900px) 
+{
   .body-sobre 
   {
     background-attachment: scroll;
     filter: blur(4px);
+  }
+  .eventos-event {
+    width: 100% !important;
   }
 }
 
@@ -294,329 +325,6 @@ footer {
    width: 100%;
  }
 }
-
-
-/* === Corpo da Página === */
-.body-join {
-    background-color: rgb(41, 91, 166);
-    color: white;
-    font-family: 'Poppins', Arial, sans-serif;
-    text-align: center;
-    overflow-x: hidden;
-    margin: 0;
-    padding-bottom: 60px;
-}
-
-/* === Introdução === */
-.intro {
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #2a2a2a;
-    border-radius: 12px;
-    padding: 3rem 2rem;
-    max-width: 800px;
-    margin: 60px auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.intro h2 {
-    color: rgb(41, 91, 166);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.intro p {
-    max-width: 650px;
-    margin: 0 auto;
-    line-height: 1.6;
-    color: #555;
-}
-
-/* === Áreas de Voluntariado === */
-.areas {
-    margin: 60px auto;
-    width: 90%;
-    text-align: center;
-}
-
-.areas h2 {
-    color: white;
-    font-size: 2rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-    margin-bottom: 2rem;
-}
-
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-.card {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    padding: 25px;
-    width: 250px;
-    text-align: left;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-}
-
-.card h3 {
-    color: rgb(41, 91, 166);
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #555;
-    line-height: 1.5;
-}
-
-/* === Corpo da Página === */
-.body-join {
-    background-color: rgb(41, 91, 166);
-    color: white;
-    font-family: 'Poppins', Arial, sans-serif;
-    text-align: center;
-    overflow-x: hidden;
-    margin: 0;
-    padding-bottom: 60px;
-}
-
-/* === Hero da Página === */
-.hero-join {
-    background-image: url('faça-parte.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    margin-bottom: 40px;
-}
-
-.hero-join::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(41, 91, 166, 0.55); /* overlay azul semi-transparente */
-    z-index: 0;
-}
-
-.hero-title {
-    color: white;
-    font-size: 3rem;
-    font-weight: 700;
-    z-index: 1;
-    margin: 0;
-}
-
-.hero-subtitle {
-    color: white;
-    font-size: 1.2rem;
-    z-index: 1;
-    margin-top: 10px;
-}
-
-/* === Secção de Introdução === */
-.intro {
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #2a2a2a;
-    border-radius: 12px;
-    padding: 3rem 2rem;
-    max-width: 800px;
-    margin: 40px auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.intro h2 {
-    color: rgb(41, 91, 166);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.intro p {
-    max-width: 650px;
-    margin: 0 auto;
-    line-height: 1.6;
-    color: #555;
-}
-
-/* === Áreas de Voluntariado === */
-.areas {
-    margin: 60px auto;
-    width: 90%;
-    text-align: center;
-}
-
-.areas h2 {
-    color: white;
-    font-size: 2rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-    margin-bottom: 2rem;
-}
-
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-.card {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    padding: 25px;
-    width: 250px;
-    text-align: left;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-}
-
-.card h3 {
-    color: rgb(41, 91, 166);
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #555;
-    line-height: 1.5;
-}
-
-/* === Formulário de Inscrição === */
-.form-section {
-    background-color: white;
-    color: #2a2a2a;
-    text-align: center;
-    padding: 4rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    max-width: 550px;
-    margin: 60px auto;
-}
-
-.form-section h2 {
-    color: rgb(41, 91, 166);
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.form-section p {
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    font-size: 1rem;
-    color: #555;
-}
-
-/* === Campos do Formulário === */
-.join-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: left;
-    max-width: 450px;
-    margin: 0 auto;
-}
-
-.join-form label {
-    font-weight: bold;
-    font-size: 0.95rem;
-    color: #333;
-}
-
-.join-form input,
-.join-form select,
-.join-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.join-form input:focus,
-.join-form select:focus,
-.join-form textarea:focus {
-    border-color: rgb(41, 91, 166);
-    outline: none;
-    box-shadow: 0 0 5px rgba(41, 91, 166, 0.3);
-}
-
-/* === Botão === */
-.join-form button {
-    background-color: rgb(41, 91, 166);
-    color: white;
-    border: none;
-    padding: 1rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
-}
-
-.join-form button:hover {
-    background-color: rgb(33, 72, 133);
-    transform: translateY(-2px);
-}
-
-/* === Rodapé === */
-footer {
-    background-color: rgb(33, 72, 133);
-    color: #ddd;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    font-size: 0.9rem;
-    margin-top: 60px;
-}
-
-/* === Responsividade === */
-@media (max-width: 768px) {
-    .hero-join {
-        height: 40vh;
-    }
-
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-
-    .cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 80%;
-    }
-
-    .intro, .form-section {
-        width: 90%;
-        padding: 2rem 1rem;
-    }
-}
-
 
 
 
