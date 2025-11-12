@@ -8,17 +8,29 @@
 
     <title>Eventos de Voluntariado</title>
     <style>
+
       button {
-      background: #4CAF50;
+      background: #295ba6;
       border: none;
       color: white;
       padding: 10px 20px;
       cursor: pointer;
       border-radius: 5px;
       }
+
       button:hover {
-      background: #45A049;
+      background: #1a53a8;
       }
+
+      h2{
+        color: #295ba6;
+        align-self: center;
+      }
+
+      h3{
+        color: rgb(41, 91, 166);
+      }
+
     </style>
   </head>
 
@@ -35,53 +47,71 @@
         </nav>
 
     <div class="eventos-container">
-      <h2> Eventos</h2><br>
+      <h2 style="color: white;"> Eventos</h2><br>
       <section id="eventos" class="eventos-cartao" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:space-between;">
 
         <div class="eventos-event">
-          <h3>Mutirão de Limpeza</h3><br>
-          <img src="Conscientemente-3.jpg" alt="Reflorestamento" height="300" width="400" />
-          <p>Data: 15 de Dezembro</p>
-          <p>Localização: Praia Central</p><br>
-          <p>Ajude a manter nossa cidade limpa!</p><br>
-          <button>Participar</button>
+          <div class="eventos-conteudo">
+            <h3>Mutirão de Limpeza</h3><br>
+            <img src="Conscientemente-3.jpg" alt="Reflorestamento" height="300" width="400" />
+            <p>Data: 15 de Dezembro</p>
+            <p>Localização: Praia Central</p><br>
+            <p>Ajude a manter nossa cidade limpa!</p><br>
+            <button>Participar</button>
+          </div>
         </div>
 
 
         <div class="eventos-event">
-          <h3>Doação de Alimentos</h3><br>
-          <img src="Conscientemente-3.jpg" alt="Reflorestamento" height="300" width="400"/>
-          <p>Data: 22 de Dezembro</p>
-          <p>Localização: Centro Comunitário</p><br>
-          <p>Entregue alimentos ou ajude na entrega de cestas básicas.</p><br>
-          <button>Participar</button>
+          <div class="eventos-conteudo">
+            <h3>Doação de Alimentos</h3><br>
+            <img src="Conscientemente-3.jpg" alt="Reflorestamento" height="300" width="400"/>
+            <p>Data: 22 de Dezembro</p>
+            <p>Localização: Centro Comunitário</p><br>
+            <p>Entregue alimentos ou ajude na entrega de cestas básicas.</p><br>
+            <button>Participar</button>
+          </div>
         </div>
 
 
         <div class="eventos-event">
-          <h3>Feira de Adoção de Animais</h3><br>
-          <img src="Conscientemente-3.jpg" alt="Reflorestamento" height="300" width="400" />
-          <p>Data: 10 de Janeiro</p>
-          <p>Localização: Praça Verde</p><br>
-          <p>Apoie abrigos e ajude um animal a encontrar um lar.</p><br>
-          <button>Participar</button>
+          <div class="eventos-conteudo">
+            <h3>Feira de Adoção de Animais</h3><br>
+            <img src="Conscientemente-3.jpg" alt="Reflorestamento" height="300" width="400" />
+            <p>Data: 10 de Janeiro</p>
+            <p>Localização: Praça Verde</p><br>
+            <p>Apoie abrigos e ajude um animal a encontrar um lar.</p><br>
+            <button>Participar</button>
+          </div>
         </div>
       </section>
 
 
-      <section id="inscricao" class="eventos-cartao">
-        
-        <h2>Inscrição</h2>
-        <form>
-          <label>Nome completo:</label><br>
-          <input type="text" placeholder="Digite seu nome" /><br><br>
-          <label>Email:</label><br>
-          <input type="email" placeholder="Digite seu email" /><br><br>
-          <label>Evento de interesse:</label><br>
-          <input type="text" placeholder="Digite o nome do evento" /><br><br>
-          <button type="submit">Enviar</button>
+      <section class="eventos-insc">
+        <h2>Inscreva-se como voluntário</h2>
+        <p style="align-self: center;">Preencha o formulário e entraremos em contacto consigo.</p>
+ 
+        <form action="#" method="post" class="join-form">
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required>
+ 
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+ 
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone">
+ 
+            <label for="area">Área de interesse:</label>
+            <select id="area" name="area">
+                <option value="Limpeza">Limpeza</option>
+                <option value="Doação">Doação de Alimentos</option>
+                <option value="Adoção">Feira de Adoção</option>
+            </select>
+
+            <br>
+            <button type="submit">Enviar candidatura</button>
         </form>
-      </section>
+    </section>
     </div>
     <footer>
        <p>2025 Associação de Voluntariado de Setúbal.</p>

@@ -4,7 +4,9 @@ img{
     height: auto;
 }
 body{
-  font-family:Georgia, 'Times New Roman', Times, serif
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(41, 91, 166);
+    padding-left: 0;
 }
 
 
@@ -25,7 +27,6 @@ ul{
   align-items: center;
   height: 100px;
   width: 100%;
- 
 }
 
 ul li {
@@ -35,6 +36,7 @@ ul li {
   align-self: center;
   position: relative;
 }
+
 ul li img{
   align-self: center;
   position: relative;
@@ -57,11 +59,6 @@ ul li a:hover{
   color:#f3cc77;
 }
 
-body{
-  background-color: #ffffff;
-  padding-left: 0;
-}
-
 
 
 
@@ -72,15 +69,15 @@ body{
 .container {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 500px;
   overflow: hidden;
 }
 
 .container img {
   position: absolute;
   width: 100%;
-  height: 400px;
-  object-fit: cover;
+  height: 500px;
+  object-fit:cover;
   opacity: 0;
   align-items: center;
   animation: slide 12s infinite;
@@ -124,54 +121,103 @@ body{
 
 
 .body-sobre {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  color: white;
+    margin:0;
+    font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+    background:var(--bg);
+    color:#111;
 }
 
-.body-sobre::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("voluntariado.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(6px);    
-  transform: scale(1.1);
-  z-index: -1;
+.container-sobre{
+    max-width:1500px;
+    margin:0 auto;
+    padding:60px;
 }
 
+.member-sobre{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.avatar-sobre{
+    width:72px;
+    height:72px;
+    border-radius:10px;
+    background:linear-gradient(135deg,#e6f7f7,#dff3fa);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    color:var(--accent);
+}
+
+.ctn-sobre{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+
+.section{
+  margin: bottom 32px;
+}
+
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+.card-sobre{
+  background:var(--card-sobre);
+  border-radius:12px;
+  padding:10px;
+  box-shadow:0 6px 18px rgba(41, 91, 166, 0.016);
+}
 
 
 /*-------------------------Eventos--------------------------*/
 .eventos-container {
-width: 80%;
-margin: auto;
-margin-top: 30px;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
 }
 
 .eventos-cartao {
-background: #fff;
-padding: 20px;
-margin-bottom: 20px;
-border-radius: 5px;
-box-shadow: 0 0 5px hsla(118, 66%, 40%, 0.5);
+    background: #295ba6;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #295ba6;
+}
+
+.eventos-insc{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: white;
+    text-align: left;
+    max-width: 450px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px #1d1d1d33;
+    margin: 0 auto;
 }
 
 .eventos-event {
-border-left: 5px solid #4CAF50;
-padding-left: 15px;
-margin-bottom: 20px;
-width: 49%;
-background: #fff;
-border-radius: 5px;
-box-shadow: 0 0 5px rgba(0,0,0,0.1);
-box-sizing: border-box;
+    border-left: 5px solid #4c9ce7;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    width: 49%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px #1d1d1d33;
+    box-sizing: border-box;
+}
+
+.eventos-conteudo{
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 /*---------doar----------*/
@@ -304,209 +350,7 @@ footer {
  }
 }
 
-.body-join {
-    background-color: rgb(41, 91, 166);
-    color: white;
-    font-family: 'Poppins', Arial, sans-serif;
-    text-align: center;
-    overflow-x: hidden;
-    margin: 0;
-    padding-bottom: 60px;
-}
- 
-.hero-join {
-    background-image: url('faça-parte.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    margin-bottom: 40px;
-}
- 
-.hero-join::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(41, 91, 166, 0.55); 
-    z-index: 0;
-}
- 
-.hero-title {
-    color: white;
-    font-size: 3rem;
-    font-weight: 700;
-    z-index: 1;
-    margin: 0;
-}
- 
-.hero-subtitle {
-    color: white;
-    font-size: 1.2rem;
-    z-index: 1;
-    margin-top: 10px;
-}
- 
- 
-.intro {
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #2a2a2a;
-    border-radius: 12px;
-    padding: 3rem 2rem;
-    max-width: 800px;
-    margin: 40px auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
- 
-.intro h2 {
-    color: rgb(41, 91, 166);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
- 
-.intro p {
-    max-width: 650px;
-    margin: 0 auto;
-    line-height: 1.6;
-    color: #555;
-}
- 
-/* === Áreas de Voluntariado === */
-.areas {
-    margin: 60px auto;
-    width: 90%;
-    text-align: center;
-}
- 
-.areas h2 {
-    color: white;
-    font-size: 2rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-    margin-bottom: 2rem;
-}
- 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
- 
-.card {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    padding: 25px;
-    width: 250px;
-    text-align: left;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
- 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-}
- 
-.card h3 {
-    color: rgb(41, 91, 166);
-    margin-bottom: 10px;
-}
- 
-.card p {
-    color: #555;
-    line-height: 1.5;
-}
- 
-.form-section {
-    background-color: white;
-    color: #2a2a2a;
-    text-align: center;
-    padding: 4rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    max-width: 550px;
-    margin: 60px auto;
-}
- 
-.form-section h2 {
-    color: rgb(41, 91, 166);
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
- 
-.form-section p {
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    font-size: 1rem;
-    color: #555;
-}
- 
-.join-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: left;
-    max-width: 450px;
-    margin: 0 auto;
-}
- 
-.join-form label {
-    font-weight: bold;
-    font-size: 0.95rem;
-    color: #333;
-}
- 
-.join-form input,
-.join-form select,
-.join-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
- 
-.join-form input:focus,
-.join-form select:focus,
-.join-form textarea:focus {
-    border-color: rgb(41, 91, 166);
-    outline: none;
-    box-shadow: 0 0 5px rgba(41, 91, 166, 0.3);
-}
- 
-.join-form button {
-    background-color: rgb(41, 91, 166);
-    color: white;
-    border: none;
-    padding: 1rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
-}
- 
-.join-form button:hover {
-    background-color: rgb(33, 72, 133);
-    transform: translateY(-2px);
-}
-footer {
-    background-color: rgb(33, 72, 133);
-    color: #ddd;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    font-size: 0.9rem;
-    margin-top: 60px;
-}
+/*-----Join-----*/
 
 .body-join {
     background-color: rgb(41, 91, 166);
@@ -703,6 +547,7 @@ footer {
     background-color: rgb(33, 72, 133);
     transform: translateY(-2px);
 }
+
 footer {
     background-color: rgb(33, 72, 133);
     color: #ddd;
@@ -717,11 +562,6 @@ footer {
 
 @media (max-width: 768px) 
 {
-  .body-sobre 
-  {
-    background-attachment: scroll;
-    filter: blur(4px);
-  }
   .eventos-event {
     width: 100% !important;
   }
@@ -750,8 +590,16 @@ footer {
         width: 90%;
         padding: 2rem 1rem;
     }
-}
 
+    .container-sobre{
+        padding:20px;
+    }
+
+    .ctn-sobre{
+        flex-direction:column;
+        align-items:stretch;
+    }
+}
 @keyframes slide {
   0% { opacity: 1; }
   25% { opacity: 0; }

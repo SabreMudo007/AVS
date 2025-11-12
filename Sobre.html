@@ -1,42 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="Estilos.css">
-        <link rel="icon" type="image/png" href="AVS-logo.png">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="Estilos.css">
+  <link rel="icon" type="image/png" href="AVS-logo.png">
+  <title>Sobre Nós — Voluntariado Setúbal</title>
+  <meta name="description" content="Equipa de voluntariado de Setúbal: missão, valores, equipa e maneiras de ajudar a comunidade local." />
+  <style>
+    :root{
+      --bg:rgb(41, 91, 166);
+      --card-sobre:#ffffff;
+      --accent:rgb(41, 91, 166);
+      --muted:#6b6f76;
+    }
 
-        <title>
-            Associação de voluntariado de Setúbal
-        </title>
-   </head> 
+    .img-avs{
+      height:400px; 
+      width:400px; 
+      align-content: right !important;
+    }
 
-   <body class="body-sobre">    
-        <nav>
-            <ul class="list-menu">
-                <li><img src="AVS-logo.png" alt="Reflorestamento" height="5px" width="5px" /></li>
-                <li><a href="Home.html">Inicio</a></li>
-                <li><a href="Eventos.html">Eventos</a></li>
-                <li><a href="Doar.html">Doar</a></li>
-                <li><a href="Sobre.html">Sobre nós</a></li>
-                <li><a href="Join.html">Junte-se às equipas</a></li>
+    h1{
+      margin:0 0 8px;
+      font-size:clamp(1.6rem,3vw,2.4rem);
+    }
+
+    footer{
+      background-color: rgb(33, 72, 133);
+      color: #ddd;
+      align-content: left;
+    }
+
+    main{
+      margin-top:-36px;
+      padding:0 20px 60px;
+    }
+
+    h2, p{
+      color: black;
+    }
+
+    .ul{
+      background-color: white;
+      align-items: left;
+      align-self: left;
+
+    }
+    .btn{
+      background:var(--accent);
+      color:#fff;
+      padding:12px 18px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .btn.secondary{
+      background:transparent;
+      color:var(--accent);
+      border:2px solid rgba(41, 91, 166, 0.12);
+    }
+  </style>
+</head>
+
+<body class= "body-sobre">
+  <nav>
+      <ul class="list-menu">
+          <li><img src="AVS-logo.png" alt="Reflorestamento" height="5px" width="5px" /></li>
+          <li><a href="Home.html">Inicio</a></li>
+          <li><a href="Eventos.html">Eventos</a></li>
+          <li><a href="Doar.html">Doar</a></li>
+          <li><a href="Sobre.html">Sobre nós</a></li>
+          <li><a href="Join.html">Junte-se ás equipas</a></li>
+      </ul>
+  </nav>
+    <div class="container-sobre">
+      <section class="section card-sobre">
+        <img src="AVS-logo.png" class="img-avs">
+        <h2>Quem somos?</h2>
+        <p>A AVS (Associação de Voluntariado de Setúbal) foi feita de maneira a promover</p>
+        <br>
+        <h2>A nossa missão</h2><br>
+        <p>Promover o bem-estar social e ambiental em Setúbal, mobilizando voluntários para projetos que ajudam famílias, idosos, jovens e o ambiente. Trabalhamos com transparência, proximidade e respeito pela diversidade.</p>
+
+        <br><div class="card-sobre">
+          <div>
+            <h3>O que fazemos</h3>
+            <ul class="ul">
+              <li>Distribuição de alimentos e bens de primeira necessidade.</li>
+              <li>Atividades educativas e de ocupação para crianças e jovens.</li>
+              <li>Limpezas de espaços públicos e ações ambientais.</li>
+              <li>Apoio a lares e acompanhamentos a idosos.</li>
             </ul>
-        </nav>
+          </div>
+          <div>
+            <h3>Como atuamos</h3><br>
+            <p>Cooperamos com escolas, IPSS locais, juntas de freguesia e empresas parceiras. Organizamos campanhas mensais e ações pontuais, garantindo formação e proteção aos nossos voluntários.</p>
+          </div>
+        </div>
+      </section>
+  
+  <div style="padding-top: 100px;" class="container">
+    <img src="Conscientemente-3.jpg" alt="Imagem 1">
+    <img src="Conscientemente-4.jpg" alt="Imagem 2">
+    <img src="Conscientemente-5.jpg" alt="Imagem 3">
+    <img src="Conscientemente-6.jpg" alt="Imagem 4">
+  </div>
+</div>
+  <div class="container-sobre">
+    <section class="section card-sobre" aria-labelledby="equipe">
+      <h2 id="equipe">A equipa</h2><br>
+      <p>Somos um grupo heterogéneo — estudantes, profissionais e reformados — unidos pela vontade de fazer a diferença.</p>
+      <div class="team-grid" style="margin-top:14px">
+        <div class="member-sobre card-sobre">
+          <div class="avatar-sobre">DS</div>
+          <div>
+            <strong>Diogo Santos</strong>
+            <div style="font-size:0.92rem;color:var(--muted)">Coordenador de projetos</div>
+            <div style="margin-top:6px;font-size:0.9rem">Email: diogo@voluntariadosetubal.org</div>
+          </div>
+        </div>
 
-        <h1>Quem Somos</h1>
-        <p style="color: white;">
-            Na Canil Vini aceitamos todo o tipo de cães de<br> 
-            maneira a sermos o mais amplo possível para todos os tipos de cães.<br>
-            Podemos ter o seu cão de sonho venha nos visitar para os conhecer.
-        </p>
-        <h2>Missão</h2>
-        <p style="color: white;">
-            A missão de um canil varia conforme o seu tipo, mas geralmente envolve o cuidado, bem-estar, e a eventual adoção de cães,<br>
-            garantindo a segurança pública, a saúde dos animais e a qualidade de vida para o máximo número de animais. <br>
-            Canis municipais têm uma missão mais focada no controlo populacional e na saúde pública, enquanto canis privados focam-se <br>
-            na criação de raças específicas ou no acolhimento de cães em busca de um lar.<br>
-        </p>
-        <footer>
-            <p>2025 Associação de Voluntariado de Setúbal.</p>
-        </footer>
-   </body> 
+        <div class="member-sobre card-sobre">
+          <div class="avatar-sobre">GA</div>
+          <div>
+            <strong>Guilherme Angelo</strong>
+            <div style="font-size:0.92rem;color:var(--muted)">Responsável logístico</div>
+            <div style="margin-top:6px;font-size:0.9rem">Email: guilherme@voluntariadosetubal.org</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="container-sobre">
+    <section class="section card-sobre" aria-labelledby="testemunhos">
+
+      <h2 id="testemunhos">O que dizem sobre nós</h2>
+      <br>
+      <p style="border-left: 5px solid #295ba6;padding-left: 20px;">
+      "A ajuda que recebemos da equipa foi essencial após as cheias — profissionais, calorosos e prontos a ajudar." — Associação Local
+      </p><br>
+    </section>
+  </div>
+  <div class="container-sobre">
+    <section class="section card-sobre" aria-labelledby="voluntarie-se">
+      <h2 id="voluntarie-se">Junte-se a nós</h2>
+      <br>
+      <p>Tem tempo para ajudar? Quer aprender novas competências e conhecer pessoas? Venha ser voluntário — há sempre tarefas para todos os perfis.</p><br>
+      <div class="ctn-sobre" style="margin-top:12px">
+        <a class="btn" href="Join.html">Quero ser voluntário</a>
+        <a class="btn secondary" href="Eventos.html">Ver projetos em curso</a>
+      </div>
+    </section>
+    </div>
+  </main>
+  <footer style="text-align: center;">
+      <div>
+        <div>
+          <strong>Email</strong>
+          <p>info@voluntariosetubal.org</p><br>
+          <strong>Telefone</strong>
+          <p>+351 265 000 000</p>
+        </div>
+        <div>
+          <strong>Endereço</strong>
+          <div>Av. Luísa Todi 45, 2900-461 Setúbal</div>
+        </div>
+      </div>
+  </footer>
+</body>
 </html>
