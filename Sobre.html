@@ -15,38 +15,15 @@
       --muted:#6b6f76;
     }
 
-    .img-avs{
-      height:400px; 
-      width:400px; 
-      align-content: right !important;
-    }
-
-    h1{
-      margin:0 0 8px;
-      font-size:clamp(1.6rem,3vw,2.4rem);
-    }
-
-    footer{
-      background-color: rgb(33, 72, 133);
-      color: #ddd;
-      align-content: left;
-    }
-
-    main{
-      margin-top:-36px;
-      padding:0 20px 60px;
-    }
-
-    h2, p{
-      color: black;
-    }
-
     .ul{
       background-color: white;
       align-items: left;
-      align-self: left;
-
     }
+
+    .ul li{
+      margin-right: 15px;
+    }
+
     .btn{
       background:var(--accent);
       color:#fff;
@@ -59,7 +36,7 @@
     .btn.secondary{
       background:transparent;
       color:var(--accent);
-      border:2px solid rgba(41, 91, 166, 0.12);
+      border:2px solid rgb(41, 91, 166);
     }
   </style>
 </head>
@@ -75,42 +52,49 @@
           <li><a href="Join.html">Junte-se ás equipas</a></li>
       </ul>
   </nav>
-    <div class="container-sobre">
+  <div class="container-sobre">
       <section class="section card-sobre">
-        <img src="AVS-logo.png" class="img-avs">
-        <h2>Quem somos?</h2>
-        <p>A AVS (Associação de Voluntariado de Setúbal) foi feita de maneira a promover</p>
-        <br>
-        <h2>A nossa missão</h2><br>
-        <p>Promover o bem-estar social e ambiental em Setúbal, mobilizando voluntários para projetos que ajudam famílias, idosos, jovens e o ambiente. Trabalhamos com transparência, proximidade e respeito pela diversidade.</p>
-
-        <br><div class="card-sobre">
-          <div>
-            <h3>O que fazemos</h3>
-            <ul class="ul">
-              <li>Distribuição de alimentos e bens de primeira necessidade.</li>
-              <li>Atividades educativas e de ocupação para crianças e jovens.</li>
-              <li>Limpezas de espaços públicos e ações ambientais.</li>
-              <li>Apoio a lares e acompanhamentos a idosos.</li>
-            </ul>
+        <div class="card-sobre-textoimg">
+          <div class="texto-sobre">
+            <h2>Quem somos?</h2><br><br>
+            <p>Somos a <strong>Associação de Voluntariado de Setúbal</strong>, uma organização sem fins lucrativos dedicada a promover a solidariedade, a entreajuda e o compromisso social na nossa comunidade.
+            <br><br>Acreditamos que cada pessoa pode fazer a diferença. Por isso, mobilizamos voluntários de todas as idades para apoiar causas locais, desde o apoio a famílias carenciadas até à preservação ambiental e iniciativas culturais.    
+            <br><br>Com sede em Setúbal, trabalhamos lado a lado com escolas, instituições e empresas locais para construir uma cidade mais justa, humana e sustentável. Também organizamos campanhas mensais e ações pontuais, garantindo formação e proteção aos nossos voluntários.
+            <br><br><br><em>Juntos, transformamos pequenas ações em grandes mudanças.</em></p>
           </div>
-          <div>
-            <h3>Como atuamos</h3><br>
-            <p>Cooperamos com escolas, IPSS locais, juntas de freguesia e empresas parceiras. Organizamos campanhas mensais e ações pontuais, garantindo formação e proteção aos nossos voluntários.</p>
+          <div class="imagem-sobre">
+            <img src="AVS-logo.png" alt="Imagem de exemplo">
           </div>
         </div>
+
       </section>
-  
-  <div style="padding-top: 100px;" class="container">
-    <img src="Conscientemente-3.jpg" alt="Imagem 1">
-    <img src="Conscientemente-4.jpg" alt="Imagem 2">
-    <img src="Conscientemente-5.jpg" alt="Imagem 3">
-    <img src="Conscientemente-6.jpg" alt="Imagem 4">
+      
+    <div style="padding-top: 100px;">
+      <div  class="card-sobre">
+        <h2>A nossa missão</h2><br>
+        <p>Promover o bem-estar social e ambiental em Setúbal, mobilizando voluntários para projetos que ajudam famílias, idosos, jovens e o ambiente. Trabalhamos com transparência, proximidade e respeito pela diversidade.</p>
+        <div style="padding-top: 30px;">
+          <h3>O que fazemos</h3>
+          <ul class="ul">
+            <li>Distribuição de alimentos e bens de primeira necessidade.</li>
+            <li>Atividades educativas e de ocupação para crianças e jovens.</li>
+            <li>Limpezas de espaços públicos e ações ambientais.</li>
+            <li>Apoio a lares e acompanhamentos a idosos.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding-top: 100px;" class="container">
+      <img src="Conscientemente-3.jpg" alt="Imagem 1">
+      <img src="Conscientemente-4.jpg" alt="Imagem 2">
+      <img src="Conscientemente-5.jpg" alt="Imagem 3">
+      <img src="Conscientemente-6.jpg" alt="Imagem 4">
+    </div>
   </div>
-</div>
   <div class="container-sobre">
     <section class="section card-sobre" aria-labelledby="equipe">
-      <h2 id="equipe">A equipa</h2><br>
+      <h2 id="equipa">A equipa</h2><br>
       <p>Somos um grupo heterogéneo — estudantes, profissionais e reformados — unidos pela vontade de fazer a diferença.</p>
       <div class="team-grid" style="margin-top:14px">
         <div class="member-sobre card-sobre">
@@ -132,18 +116,18 @@
         </div>
       </div>
     </section>
-  </div>
-  <div class="container-sobre">
-    <section class="section card-sobre" aria-labelledby="testemunhos">
+    </div>
+    <div class="container-sobre">
+      <section class="section card-sobre" aria-labelledby="testemunhos">
 
-      <h2 id="testemunhos">O que dizem sobre nós</h2>
-      <br>
-      <p style="border-left: 5px solid #295ba6;padding-left: 20px;">
-      "A ajuda que recebemos da equipa foi essencial após as cheias — profissionais, calorosos e prontos a ajudar." — Associação Local
-      </p><br>
-    </section>
-  </div>
-  <div class="container-sobre">
+        <h2 id="testemunhos">O que dizem sobre nós</h2>
+        <br>
+        <p style="border-left: 5px solid #295ba6;padding-left: 20px;">
+        "A ajuda que recebemos da equipa foi essencial após as cheias — profissionais, calorosos e prontos a ajudar." — Associação Local
+        </p><br>
+      </section>
+    </div>
+    <div class="container-sobre">
     <section class="section card-sobre" aria-labelledby="voluntarie-se">
       <h2 id="voluntarie-se">Junte-se a nós</h2>
       <br>
@@ -154,20 +138,8 @@
       </div>
     </section>
     </div>
-  </main>
-  <footer style="text-align: center;">
-      <div>
-        <div>
-          <strong>Email</strong>
-          <p>info@voluntariosetubal.org</p><br>
-          <strong>Telefone</strong>
-          <p>+351 265 000 000</p>
-        </div>
-        <div>
-          <strong>Endereço</strong>
-          <div>Av. Luísa Todi 45, 2900-461 Setúbal</div>
-        </div>
-      </div>
-  </footer>
+  <footer>
+       <p>2025 Associação de Voluntariado de Setúbal.</p>
+    </footer>
 </body>
 </html>
