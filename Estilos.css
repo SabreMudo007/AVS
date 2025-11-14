@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    line-height: 1.6; /* Improved readability */
+    line-height: 1.6;
 }
 
 img {
@@ -97,16 +97,16 @@ nav ul li a:hover {
     width: 85%;
     margin: auto;
     gap: 80px;
-    background-color: rgba(255, 255, 255, 0.05); /* Very subtle background for section definition */
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Light shadow for elevation */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 .logo-main {
     width: 350px;
-    border-radius: 8px; /* Rounding for logo */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on logo */
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .main-text {
@@ -116,7 +116,7 @@ nav ul li a:hover {
 .text-1 {
     font-size: 36px;
     font-weight: 600;
-    margin-bottom: 10px; /* Better spacing */
+    margin-bottom: 10px;
 }
 
 .sub-1 {
@@ -128,7 +128,7 @@ nav ul li a:hover {
 .text-2 {
     font-size: 28px;
     margin-top: 15px;
-    font-weight: 300; /* Lighter weight for subtitle */
+    font-weight: 300;
 }
 
 /*------------------ Footer -------------------*/
@@ -138,7 +138,7 @@ footer {
     margin-top: 20px;
     background-color: rgba(0, 0, 0, 0.1);
     font-size: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
 
