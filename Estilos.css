@@ -1,115 +1,180 @@
-/*----------------------Basicos-----------------------*/
-img{
-    width: 60%;
+/*---------------------- Global -----------------------*/
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: #295BA6;
+    margin: 0;
+    padding: 0;
+    color: white;
+    line-height: 1.6; /* Improved readability */
+}
+
+img {
+    max-width: 100%;
     height: auto;
 }
-body{
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    background-color: rgb(41, 91, 166);
-    padding-left: 0;
+
+/*---------------------- Menu -----------------------*/
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+    height: 90px;
+    background-color: #2e8dfa;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-
-
-/*----------------------Menu-----------------------*/
-.list-menu{
-  list-style-type: none;
-  margin: 4;
-  padding: 4;
+nav ul li img {
+    height: 70px;
+    width: 70px;
+    border-radius: 8px; /* Slight rounding for modern look */
 }
 
-ul{  
-  background-color: #2e8dfa;
-  margin: 0;
-  padding: 0 20px;
-  display: flex;  
-  justify-content: flex-start;
-  align-items: center;
-  height: 100px;
-  width: 100%;
+nav ul li a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 4px; /* Subtle rounding on hover */
 }
 
-ul li {
-  float: left;
-  margin: 5px;
-  padding: 0;
-  align-self: center;
-  position: relative;
+nav ul li a:hover {
+    color: #f3cc77;
+    background-color: rgba(243, 204, 119, 0.1); /* Light background on hover for better feedback */
 }
 
-ul li img{
-  align-self: center;
-  position: relative;
-  height: 80px;
-  width: 80px;
-}
-
-ul li a{
-  size: 20px;
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 14px 20px;
-  transition: background 0.3s;
-}
-
-ul li a:hover{
-  display: block;
-  text-align: center;
-  color:#f3cc77;
-}
-
-
-
-
-/*------------------Banner_img-------------------*/
-
-
-
+/*------------------ Banner -------------------*/
 .container {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-  border-radius: 20px;
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow for prominence */
 }
 
 .container img {
-  position: absolute;
-  width: 100%;
-  height: 500px;
-  object-fit:cover;
-  opacity: 0;
-  align-items: center;
-  animation: ciclo 12s infinite;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease; /* Subtle zoom on hover for interactivity */
 }
 
-
-.container img:nth-child(1) { animation-delay: 0s; }
-.container img:nth-child(2) { animation-delay: 3s; }
-.container img:nth-child(3) { animation-delay: 6s; }
-.container img:nth-child(4) { animation-delay: 9s; }
+.container:hover img {
+    transform: scale(1.05);
+}
 
 .overlay {
-  position: absolute;
-  bottom: 0;
-  left: 5%;
-  right: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 40px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent); /* Gradient for better text readability */
 }
 
-.text {
-  white-space: nowrap; 
-  color: white;
-  font-size: 25px;
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  top: 90%;
-  left: 0%;
+.text-what-is {
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
 }
+
+/*------------------ Main Content -------------------*/
+.main-content {
+    background-color: transparent;
+    padding: 60px 0;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+    gap: 80px;
+    background-color: rgba(255, 255, 255, 0.05); /* Very subtle background for section definition */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Light shadow for elevation */
+}
+
+.logo-main {
+    width: 350px;
+    border-radius: 8px; /* Rounding for logo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on logo */
+}
+
+.main-text {
+    max-width: 600px;
+}
+
+.text-1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px; /* Better spacing */
+}
+
+.sub-1 {
+    font-size: 32px;
+    display: block;
+    margin-top: 5px;
+}
+
+.text-2 {
+    font-size: 28px;
+    margin-top: 15px;
+    font-weight: 300; /* Lighter weight for subtitle */
+}
+
+/*------------------ Footer -------------------*/
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+}
+
+/*------------------ Responsivo -------------------*/
+@media (max-width: 900px) {
+    .main-wrapper {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px; /* Reduced padding on mobile */
+    }
+
+    .logo-main {
+        width: 260px;
+    }
+
+    .text-1 {
+        font-size: 30px;
+    }
+
+    .sub-1 {
+        font-size: 26px;
+    }
+
+    .text-2 {
+        font-size: 22px;
+    }
+
+    .overlay {
+        padding: 15px 20px; /* Adjusted for mobile */
+    }
+
+    .text-what-is {
+        font-size: 32px; /* Smaller on mobile */
+    }
+}
+
+
 
 
 
@@ -234,9 +299,14 @@ ul li a:hover{
     padding-bottom: 20px;
 }
 
-.eventos-conteudo img{
+.eventos-conteudo img {
     height: 300px;
     width: 500px;
+    transition: transform 0.5s ease; /* Add smooth transition */
+}
+
+.eventos-conteudo img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 /*---------doar----------*/
