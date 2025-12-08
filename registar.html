@@ -56,6 +56,7 @@
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
   import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+  import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyBIE36QlivTvwqx6fjEV2EVAK2gN7dRdrs",
@@ -68,6 +69,7 @@
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
+  const db = getFirestore(app); // Inicializa o Firestore
 
   // Selecionar elementos
   const regForm = document.getElementById("regForm");
@@ -87,10 +89,22 @@
 
     // Criar utilizador no Firebase
     createUserWithEmailAndPassword(auth, emailInput.value, senhaInput.value)
-      .then((userCredential) => {
-        alert("Conta criada com sucesso!");
-        // Redireciona para Login
-        window.location.href = "Logado.html";
+      .then(async (userCredential) => {
+        const user = userCredential.user;
+
+        try {
+          // Salva dados no Firestore
+          await setDoc(doc(db, "users", user.uid), {
+            nome: nomeInput.value,
+            email: emailInput.value,
+            criadoEm: new Date()
+          });
+
+          alert("Conta criada com sucesso!");
+          window.location.href = "Logado.html"; // Redireciona após salvar
+        } catch (error) {
+          alert("Erro ao salvar dados da conta: " + error.message);
+        }
       })
       .catch((error) => {
         alert("Erro ao registar: " + error.message);
