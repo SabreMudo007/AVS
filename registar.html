@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AVS - Login</title>
+<title>AVS - Registar</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="Estilos.css">
 </head>
@@ -18,26 +18,31 @@
     <li><a href="Doar.html">Doar</a></li>
     <li><a href="Sobre.html">Sobre nós</a></li>
     <li><a href="Join.html">Junte-se às equipas</a></li>
-    <li><a href="Conta.html"></a></li>
   </ul>
 </nav>
 
 <section class="login-container">
   <div class="login-card">
-    <h2>Entrar</h2>
-    <p>Aceda à sua conta para continuar.</p>
+    <h2>Criar Conta</h2>
+    <p>Preencha os campos para se registar.</p>
 
-    <form class="login-form">
+    <form class="login-form" id="regForm">
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" placeholder="Digite o seu nome" required>
+
       <label for="email">E-mail</label>
       <input type="email" id="email" placeholder="Digite o seu e-mail" required>
 
       <label for="senha">Palavra-passe</label>
-      <input type="password" id="senha" placeholder="Digite a sua palavra-passe" required>
+      <input type="password" id="senha" placeholder="Crie uma palavra-passe" required>
 
-      <button type="submit" id="submit">Entrar</button>
+      <label for="confirmar">Confirmar palavra-passe</label>
+      <input type="password" id="confirmar" placeholder="Repita a palavra-passe" required>
+
+      <button type="submit" id="registarBtn">Registar</button>
 
       <p class="registar-link">
-        Ainda não tem conta? <a href="Registar.html">Registe-se</a>
+        Já tem conta? <a href="Login.html">Entre aqui</a>
       </p>
     </form>
   </div>
@@ -47,59 +52,52 @@
   <p>2025 Associação de Voluntariado de Setúbal.</p>
 </footer>
 
+<!-- SCRIPT FIREBASE -->
 <script type="module">
-  // Import firebase modules
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 
-  // Firebase config
   const firebaseConfig = {
     apiKey: "AIzaSyBIE36QlivTvwqx6fjEV2EVAK2gN7dRdrs",
     authDomain: "avs-login-b3345.firebaseapp.com",
     projectId: "avs-login-b3345",
     storageBucket: "avs-login-b3345.firebasestorage.app",
     messagingSenderId: "441342978542",
-    appId: "1:441342978542:web:884bc7280c4db0c6bdc6ff",
-    measurementId: "G-HNBCC7SQF5"
+    appId: "1:441342978542:web:884bc7280c4db0c6bdc6ff"
   };
 
-  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
   // Selecionar elementos
+  const regForm = document.getElementById("regForm");
+  const nomeInput = document.getElementById("nome");
   const emailInput = document.getElementById("email");
   const senhaInput = document.getElementById("senha");
-  const loginBtn = document.getElementById("submit");
+  const confirmarInput = document.getElementById("confirmar");
 
-  // Tratar login
-  loginBtn.addEventListener("click", (e) => {
-    e.preventDefault(); // impede o refresh da página
+  regForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-    const email = emailInput.value;
-    const password = senhaInput.value;
+    // Verifica se as passwords coincidem
+    if (senhaInput.value !== confirmarInput.value) {
+      alert("As palavras-passe não coincidem!");
+      return;
+    }
 
-    signInWithEmailAndPassword(auth, email, password)
+    // Criar utilizador no Firebase
+    createUserWithEmailAndPassword(auth, emailInput.value, senhaInput.value)
       .then((userCredential) => {
-        alert("Login efetuado com sucesso!");
-        window.location.href = "Logado.html"; // redireciona para a página principal
+        alert("Conta criada com sucesso!");
+        // Redireciona para Login
+        window.location.href = "Logado.html";
       })
       .catch((error) => {
-        let msg = "Erro no login.\n";
-
-        if (error.code === "auth/invalid-credential") {
-          msg += "Email ou palavra-passe incorretos.";
-        } else if (error.code === "auth/user-not-found") {
-          msg += "Este email não existe.";
-        } else if (error.code === "auth/wrong-password") {
-          msg += "Palavra-passe incorreta.";
-        } else {
-          msg += error.message;
-        }
-
-        alert(msg);
+        alert("Erro ao registar: " + error.message);
       });
   });
 </script>
+
 </body>
 </html>
+

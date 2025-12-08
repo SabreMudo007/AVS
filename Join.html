@@ -17,6 +17,7 @@
         <li><a href="Doar.html">Doar</a></li>
         <li><a href="Sobre.html">Sobre nós</a></li>
         <li><a href="Join.html">Junte-se às equipas</a></li>
+        <li><a href="#" id="contaLink">Conta</a></li>
       </ul>
     </nav>
 <section class="hero-join">
@@ -90,5 +91,42 @@
     <footer>
         <p>2025 Associação de Voluntariado de Setúbal.</p>
     </footer>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBIE36QlivTvwqx6fjEV2EVAK2gN7dRdrs",
+    authDomain: "avs-login-b3345.firebaseapp.com",
+    projectId: "avs-login-b3345",
+    storageBucket: "avs-login-b3345.firebasestorage.app",
+    messagingSenderId: "441342978542",
+    appId: "1:441342978542:web:884bc7280c4db0c6bdc6ff"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+let userLogged = null;
+
+// Armazena estado do login
+onAuthStateChanged(auth, (user) => {
+    userLogged = user;
+});
+
+const contaLink = document.getElementById("contaLink");
+if (contaLink) {
+    contaLink.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // Verifica se usuário está logado
+        if (userLogged) {
+            window.location.href = "Logado.html";
+        } else {
+            window.location.href = "Conta.html";
+        }
+    });
+}
+</script>
 </body>
 </html>
