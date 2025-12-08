@@ -42,7 +42,7 @@
       <button type="submit" id="registarBtn">Registar</button>
 
       <p class="registar-link">
-        Já tem conta? <a href="Login.html">Entre aqui</a>
+        Já tem conta? <a href="Conta.html">Entre aqui</a>
       </p>
     </form>
   </div>
@@ -52,11 +52,10 @@
   <p>2025 Associação de Voluntariado de Setúbal.</p>
 </footer>
 
-<!-- SCRIPT FIREBASE -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
   import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
-  import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+  import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js"; // importa de um serviço de base de dados, forma segura de guardar dados dos utilizadores
 
   const firebaseConfig = {
     apiKey: "AIzaSyBIE36QlivTvwqx6fjEV2EVAK2gN7dRdrs",
@@ -64,19 +63,18 @@
     projectId: "avs-login-b3345",
     storageBucket: "avs-login-b3345.firebasestorage.app",
     messagingSenderId: "441342978542",
-    appId: "1:441342978542:web:884bc7280c4db0c6bdc6ff"
+    appId: "1:441342978542:web:884bc7280c4db0c6bdc6ff" // configurações do projeto Firebase
   };
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
   const db = getFirestore(app); // Inicializa o Firestore
 
-  // Selecionar elementos
   const regForm = document.getElementById("regForm");
   const nomeInput = document.getElementById("nome");
   const emailInput = document.getElementById("email");
   const senhaInput = document.getElementById("senha");
-  const confirmarInput = document.getElementById("confirmar");
+  const confirmarInput = document.getElementById("confirmar"); // guarda as referências dos elementos do formulário
 
   regForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -84,29 +82,28 @@
     // Verifica se as passwords coincidem
     if (senhaInput.value !== confirmarInput.value) {
       alert("As palavras-passe não coincidem!");
-      return;
+      return; // retorna sem continuar o registo, devem ser iguais
     }
 
-    // Criar utilizador no Firebase
     createUserWithEmailAndPassword(auth, emailInput.value, senhaInput.value)
       .then(async (userCredential) => {
-        const user = userCredential.user;
+        const user = userCredential.user; // função que cria a conta com email e senha, retorna com o objeto usercredential
 
         try {
           // Salva dados no Firestore
-          await setDoc(doc(db, "users", user.uid), {
+          await setDoc(doc(db, "users", user.uid), { // salva um documento na coleção "users" com o ID do utilizador
             nome: nomeInput.value,
-            email: emailInput.value,
-            criadoEm: new Date()
+            email: emailInput.value, // guarda o nome e email fornecidos
+            criadoEm: new Date() // data de criação da conta
           });
 
           alert("Conta criada com sucesso!");
           window.location.href = "Logado.html"; // Redireciona após salvar
-        } catch (error) {
+        } catch (error) { // o try tenta salvar os dados, o catch captura erros
           alert("Erro ao salvar dados da conta: " + error.message);
         }
       })
-      .catch((error) => {
+      .catch((error) => { // captura erros na criação da conta
         alert("Erro ao registar: " + error.message);
       });
   });

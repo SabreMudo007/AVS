@@ -48,11 +48,11 @@
 </footer>
 
 <script type="module">
-  // Import firebase modules
+  // importa os módulos necessários do Firebase
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
   import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 
-  // Firebase config
+  // configurações necessárias para inicializar o Firebase
   const firebaseConfig = {
     apiKey: "AIzaSyBIE36QlivTvwqx6fjEV2EVAK2gN7dRdrs",
     authDomain: "avs-login-b3345.firebaseapp.com",
@@ -63,41 +63,39 @@
     measurementId: "G-HNBCC7SQF5"
   };
 
-  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
+  const auth = getAuth(app); // liga e inicializa o serviço de autenticação
 
-  // Selecionar elementos
+
   const emailInput = document.getElementById("email");
   const senhaInput = document.getElementById("senha");
-  const loginBtn = document.getElementById("submit");
+  const loginBtn = document.getElementById("submit"); // guarda as referências dos elementos do formulário
 
-  // Tratar login
-  loginBtn.addEventListener("click", (e) => {
-    e.preventDefault(); // impede o refresh da página
+  loginBtn.addEventListener("click", (e) => { // ao clicar no botão de login
+    e.preventDefault(); // impede o refresh da página para não perder os dados
 
     const email = emailInput.value;
-    const password = senhaInput.value;
+    const password = senhaInput.value; // guarda os valores inseridos nas variáveis
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        alert("Login efetuado com sucesso!");
-        window.location.href = "Logado.html"; // redireciona para a página principal
+    signInWithEmailAndPassword(auth, email, password) // tenta autenticar com email e senha
+      .then((userCredential) => { // se for bem sucedido (usercredential contém os dados do utilizador)
+        alert("Login efetuado com sucesso!"); 
+        window.location.href = "Logado.html"; // redireciona para a página com a conta
       })
-      .catch((error) => {
+      .catch((error) => { // se houver erro na autenticação
         let msg = "Erro no login.\n";
 
-        if (error.code === "auth/invalid-credential") {
-          msg += "Email ou palavra-passe incorretos.";
+        if (error.code === "auth/invalid-credential") { // se as credenciais forem inválidas
+          msg += "Email ou palavra-passe incorretos."; 
         } else if (error.code === "auth/user-not-found") {
-          msg += "Este email não existe.";
-        } else if (error.code === "auth/wrong-password") {
+          msg += "Este email não existe."; // se o email não estiver registado
+        } else if (error.code === "auth/wrong-password") { // se a password estiver errada
           msg += "Palavra-passe incorreta.";
-        } else {
+        } else { // para outros erros
           msg += error.message;
         }
 
-        alert(msg);
+        alert(msg); // mostra a mensagem de erro apropriada, com pelo menos o "Erro no login."
       });
   });
 </script>
