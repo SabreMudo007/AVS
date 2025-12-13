@@ -3,81 +3,114 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 <title>AVS - Doar</title>
 <link rel="stylesheet" href="Estilos.css" />
 </head>
-  <body class="body-doar">        
-    <nav>
-      <ul class="list-menu">
-        <li><img src="AVS-logo.png" alt="Reflorestamento" height="5px" width="5px" /></li>
-        <li><a href="Home.html">Inicio</a></li>
-        <li><a href="Eventos.html">Eventos</a></li>
-        <li><a href="Doar.html">Doar</a></li>
-        <li><a href="Sobre.html">Sobre nós</a></li>
-        <li><a href="Join.html">Junte-se às equipas</a></li>
-        <li><a href="#" id="contaLink">Conta</a></li>
-      </ul>
-    </nav>
+<body class="body-doar">
+
+<nav>
+  <ul class="list-menu">
+    <li><img src="AVS-logo.png" alt="Reflorestamento" height="5px" width="5px" /></li>
+    <li><a href="Home.html">Inicio</a></li>
+    <li><a href="Eventos.html">Eventos</a></li>
+    <li><a href="Doar.html">Doar</a></li>
+    <li><a href="Sobre.html">Sobre nós</a></li>
+    <li><a href="Join.html">Junte-se às equipas</a></li>
+    <li><a href="#" id="contaLink">Conta</a></li>
+  </ul>
+</nav>
+
 <section class="hero">
-<img class="logo" src="AVS-logo.png" alt="Logotipo AVS" />
-<h1 class="titulo">Juntos Fazemos a Mudança</h1>
+  <img class="logo" src="AVS-logo.png" alt="Logotipo AVS" />
+  <h1 class="titulo">Juntos Fazemos a Mudança</h1>
 </section>
+
 <section class="formulario-doar">
 <h2>Faça a sua doação</h2>
 <p>Com a sua contribuição, ajudamos quem mais precisa. Cada gesto conta!</p>
-<form class="doacao-form">
-<label for="nome">Nome completo</label>
-<input type="text" id="nome" name="nome" placeholder="Digite o seu nome" required />
-<label for="email">E-mail</label>
-<input type="email" id="email" name="email" placeholder="Digite o seu e-mail" required />
-<label for="valor">Valor da doação (€)</label>
-<input type="number" id="valor" name="valor" min="1" placeholder="Ex: 20" required />
-<label for="mensagem">Mensagem (opcional)</label>
-<textarea id="mensagem" name="mensagem" rows="4" placeholder="Deixe uma mensagem solidária..."></textarea>
-<button type="submit">Doar Agora</button>
+
+<form class="doacao-form" id="doacaoForm">
+  <label for="nome">Nome completo</label>
+  <input type="text" id="nome" name="nome" placeholder="Digite o seu nome" required />
+
+  <label for="email">E-mail</label>
+  <input type="email" id="email" name="email" placeholder="Digite o seu e-mail" required />
+
+  <label for="valor">Valor da doação (€)</label>
+  <input type="number" id="valor" name="valor" min="1" placeholder="Ex: 20" required />
+
+  <label for="mensagem">Mensagem (opcional)</label>
+  <textarea id="mensagem" name="mensagem" rows="4" placeholder="Deixe uma mensagem solidária..."></textarea>
+
+  <button type="submit">Doar Agora</button>
 </form>
 </section>
+
 <footer>
-<p>2025 Associação de Voluntariado de Setúbal.</p>
+  <p>2025 Associação de Voluntariado de Setúbal.</p>
 </footer>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
+// 🔹 Config Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyBIE36QlivTvwqx6fjEV2EVAK2gN7dRdrs",
-    authDomain: "avs-login-b3345.firebaseapp.com",
-    projectId: "avs-login-b3345",
-    storageBucket: "avs-login-b3345.firebasestorage.app",
-    messagingSenderId: "441342978542",
-    appId: "1:441342978542:web:884bc7280c4db0c6bdc6ff"
+  apiKey: "AIzaSyBIE36QlivTvwqx6fjEV2EVAK2gN7dRdrs",
+  authDomain: "avs-login-b3345.firebaseapp.com",
+  projectId: "avs-login-b3345",
+  storageBucket: "avs-login-b3345.firebasestorage.app",
+  messagingSenderId: "441342978542",
+  appId: "1:441342978542:web:884bc7280c4db0c6bdc6ff"
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 let userLogged = null;
 
-// Armazena estado do login
+// 🔹 Estado de autenticação
 onAuthStateChanged(auth, (user) => {
-    userLogged = user;
+  userLogged = user;
 });
 
-const contaLink = document.getElementById("contaLink");
-if (contaLink) {
-    contaLink.addEventListener("click", (e) => {
-        e.preventDefault();
+// 🔹 Link para a conta
+document.getElementById("contaLink").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.href = userLogged ? "Logado.html" : "Conta.html";
+});
 
-        // Verifica se usuário está logado
-        if (userLogged) {
-            window.location.href = "Logado.html";
-        } else {
-            window.location.href = "Conta.html";
-        }
+// 🔹 Submissão do formulário de doação
+document.getElementById("doacaoForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  if (!userLogged) {
+    alert("Precisa de estar autenticado para doar.");
+    return;
+  }
+
+  try {
+    await addDoc(collection(db, "doacoes"), {
+      uid: userLogged.uid,
+      valor: Number(document.getElementById("valor").value),
+      mensagem: document.getElementById("mensagem").value || "—",
+      estado: "concluida",
+      data: serverTimestamp()
     });
-}
+
+    alert("Doação registada com sucesso!");
+    e.target.reset();
+
+  } catch (error) {
+    console.error(error);
+    alert("Erro ao registar doação.");
+  }
+});
 </script>
+
 </body>
 </html>
+

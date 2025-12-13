@@ -812,3 +812,26 @@ footer {
   background-color: rgb(33, 72, 133);
   transform: translateY(-2px);
 }
+
+h3 {
+    margin-top: 50px;
+    color: rgb(41, 91, 166);
+    font-size: 22px;
+}
+
+.tabela-container {
+  width: 100%;
+  overflow-x: auto; /* impede sair do container */
+}
+
+.tabela-doacoes {
+  width: 100%;
+  table-layout: fixed; /* força colunas a respeitar o espaço */
+}
+
+.tabela-doacoes th,
+.tabela-doacoes td {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
