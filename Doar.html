@@ -56,7 +56,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebas
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
-// 🔹 Config Firebase
+// Config Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyBIE36QlivTvwqx6fjEV2EVAK2gN7dRdrs",
   authDomain: "avs-login-b3345.firebaseapp.com",
@@ -72,18 +72,18 @@ const db = getFirestore(app);
 
 let userLogged = null;
 
-// 🔹 Estado de autenticação
+// Estado de autenticação
 onAuthStateChanged(auth, (user) => {
   userLogged = user;
 });
 
-// 🔹 Link para a conta
+// Link para a conta
 document.getElementById("contaLink").addEventListener("click", (e) => {
   e.preventDefault();
   window.location.href = userLogged ? "Logado.html" : "Conta.html";
 });
 
-// 🔹 Submissão do formulário de doação
+// Submissão do formulário de doação
 document.getElementById("doacaoForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
