@@ -1,52 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="Estilos.css">
-        <link rel="icon" type="image/png" href="AVS-logo.png">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="Estilos.css">
+    <link rel="stylesheet" type="text/css" href="Eventos.css">
+    <link rel="icon" type="image/png" href="AVS-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    
     <title>Eventos de Voluntariado</title>
-    <style>
-
-      button {
-      background: #295ba6;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 5px;
-      }
-
-      button:hover {
-      background: #1a53a8;
-      }
-
-      h2{
-        color: #295ba6;
-        align-self: center;
-      }
-
-      h3{
-        color: rgb(41, 91, 166);
-      }
-
-    </style>
   </head>
 
   <body>        
-        <nav>
-            <ul class="list-menu">
-                <li><img src="AVS-logo.png" alt="Reflorestamento" height="5px" width="5px" /></li>
-                <li><a href="Home.html">Inicio</a></li>
-                <li><a href="Eventos.html">Eventos</a></li>
-                <li><a href="Doar.html">Doar</a></li>
-                <li><a href="Sobre.html">Sobre nós</a></li>
-                <li><a href="Join.html">Junte-se às equipas</a></li>
-                <li><a href="#" id="contaLink">Conta</a></li>
-            </ul>
-        </nav>
+    <nav>
+        <ul class="list-menu">
+            <li><img src="AVS-logo.png" alt="Reflorestamento" height="5px" width="5px" /></li>
+            <li><a href="Home.html">Inicio</a></li>
+            <li><a href="Eventos.html">Eventos</a></li>
+            <li><a href="Doar.html">Doar</a></li>
+            <li><a href="Sobre.html">Sobre nós</a></li>
+            <li><a href="Join.html">Junte-se às equipas</a></li>
+            <li><a href="#" id="contaLink">Conta</a></li>
+        </ul>
+    </nav>
 
     <div class="eventos-container">
       <h2 style="color: white;"> Eventos</h2><br>
@@ -59,7 +36,7 @@
             <p>Data: 15 de Dezembro</p>
             <p>Localização: Praia Central</p><br>
             <p>Ajude a manter nossa cidade limpa!</p><br>
-            <button>Participar</button>
+            <button class="participar-btn" data-event-name="Mutirão de Limpeza">Participar</button>
           </div>
         </div>
 
@@ -71,7 +48,7 @@
             <p>Data: 22 de Dezembro</p>
             <p>Localização: Centro Comunitário</p><br>
             <p>Entregue alimentos ou ajude na entrega de cestas básicas.</p><br>
-            <button>Participar</button>
+            <button class="participar-btn" data-event-name="Doação de Alimentos">Participar</button>
           </div>
         </div>
 
@@ -80,10 +57,10 @@
           <div class="eventos-conteudo">
             <h3>Feira de Adoção de Animais</h3><br>
             <img src="Feira Adoção.jpg" alt="Reflorestamento" height="300" width="400" />
-            <p>Data: 10 de Janeiro</p>
+            <p>Data: 5 de Janeiro</p>
             <p>Localização: Praça Verde</p><br>
             <p>Apoie abrigos e ajude um animal a encontrar um lar.</p><br>
-            <button>Participar</button>
+            <button class="participar-btn" data-event-name="Feira de Adoção de Animais">Participar</button>
           </div>
         </div>
 
@@ -91,82 +68,77 @@
           <div class="eventos-conteudo">
             <h3>Doação de Roupa</h3><br>
             <img src="arrecadação-roupa.jpg" alt="Doação de Roupa" height="300" width="400" />
-            <p>Data: 5 de Janeiro</p>
+            <p>Data: 10 de Janeiro</p>
             <p>Localização: Centro de Recolha</p><br>
             <p>Doe roupas em bom estado ou ajude na organização e distribuição.</p><br>
-            <button>Participar</button>
+            <button class="participar-btn" data-event-name="Doação de Roupa">Participar</button>
           </div>
         </div>
-
       </section>
-
-
-      <section class="eventos-insc">
-        <h2>Inscreva-se como voluntário</h2>
-        <p style="align-self: center;">Preencha o formulário e entraremos em contacto consigo.</p>
- 
-        <form action="#" method="post" class="join-form">
-            <label for="nome">Nome completo:</label>
-            <input type="text" id="nome" name="nome" required>
- 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
- 
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone">
- 
-            <label for="area">Área de interesse:</label>
-            <select id="area" name="area">
-                <option value="Limpeza">Limpeza</option>
-                <option value="Doação">Doação de Alimentos</option>
-                <option value="Adoção">Feira de Adoção</option>
-                <option value="Roupa">Doação de Roupa</option>
-            </select>
-
-            <br>
-            <button type="submit">Enviar candidatura</button>
-        </form>
-    </section>
     </div>
+    
     <footer>
        <p>2025 Associação de Voluntariado de Setúbal.</p>
     </footer>
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 
-const firebaseConfig = {
-    apiKey: "AIzaSyBIE36QlivTvwqx6fjEV2EVAK2gN7dRdrs",
-    authDomain: "avs-login-b3345.firebaseapp.com",
-    projectId: "avs-login-b3345",
-    storageBucket: "avs-login-b3345.firebasestorage.app",
-    messagingSenderId: "441342978542",
-    appId: "1:441342978542:web:884bc7280c4db0c6bdc6ff"
-};
+    <div id="modal" class="hidden">
+        <div id="participar-modal">
+            <h3>Inscrição no Evento: <span id="event-title"></span></h3>
+            <form id="participar-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
 
-let userLogged = null;
+                <label for="message">Mensagem (Opcional):</label>
+                <textarea id="message" name="message"></textarea>
 
-// Armazena estado do login
-onAuthStateChanged(auth, (user) => {
-    userLogged = user;
-});
+                <button type="submit" id="submit-btn">Confirmar Inscrição</button>
+                <button type="button" id="close-btn">Fechar</button>
+            </form>
+            <p id="msg-sucesso" class="hidden">Inscrição efetuada com sucesso!</p>
+        </div>
+    </div>
 
-const contaLink = document.getElementById("contaLink");
-if (contaLink) {
-    contaLink.addEventListener("click", (e) => {
-        e.preventDefault();
+    <script src="JavaScript.js"></script>
 
-        // Verifica se usuário está logado
-        if (userLogged) {
-            window.location.href = "Logado.html";
-        } else {
-            window.location.href = "Conta.html";
-        }
-    });
-}
-</script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+      import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+
+      const firebaseConfig = {
+          apiKey: "AIzaSyBIE36QlivTvwqx6fjEV2EVAK2gN7dRdrs",
+          authDomain: "avs-login-b3345.firebaseapp.com",
+          projectId: "avs-login-b3345",
+          storageBucket: "avs-login-b3345.firebasestorage.app",
+          messagingSenderId: "441342978542",
+          appId: "1:441342978542:web:884bc7280c4db0c6bdc6ff"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      let userLogged = null;
+
+      // Armazena estado do login
+      onAuthStateChanged(auth, (user) => {
+          userLogged = user;
+      });
+
+      const contaLink = document.getElementById("contaLink");
+      if (contaLink) {
+          contaLink.addEventListener("click", (e) => {
+              e.preventDefault();
+
+              // Verifica se usuário está logado
+              if (userLogged) {
+                  window.location.href = "Logado.html";
+              } else {
+                  window.location.href = "Conta.html";
+              }
+          });
+      }
+    </script>
   </body>
 </html>
