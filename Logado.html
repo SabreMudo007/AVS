@@ -72,33 +72,31 @@ const tabela = document.getElementById("tabelaDoacoes");
 
 onAuthStateChanged(auth, async (user) => {
   if (!user) {
-    window.location.href = "Conta.html";
-    return;
+    window.location.href = "Conta.html"; // Redireciona para a página de login se não estiver autenticado
+    return; // interrompe a execução do restante código
   }
 
   try {
-    // Consulta sem orderBy para evitar problemas com documentos sem timestamp
-    const q = query(collection(db, "doacoes"), where("uid", "==", user.uid));
-    const snapshot = await getDocs(q);
+    // cria uma consulta para obter as doações do utilizador
+    const q = query(collection(db, "doacoes"), where("uid", "==", user.uid)); // vai buscar à coleção "doacoes" onde o campo "uid" é igual ao UID do utilizador
+    const snapshot = await getDocs(q); // executa a consulta e obtém os documentos correspondentes
 
-    if (snapshot.empty) {
+    if (snapshot.empty) { // se não houver doações
       tabela.innerHTML = `<tr><td colspan="4">Ainda não realizou doações</td></tr>`;
-      return;
+      return; // interrompe a execução do restante código
     }
 
-    // Ordenar manualmente pelo campo data (se existir)
-    const doacoes = snapshot.docs
-      .map(doc => ({ id: doc.id, ...doc.data() }))
-      .sort((a, b) => {
-        const timeA = a.data ? a.data.toMillis() : 0;
-        const timeB = b.data ? b.data.toMillis() : 0;
-        return timeB - timeA; // descendente
+    const doacoes = snapshot.docs // processa os documentos obtidos
+      .map(doc => ({ id: doc.id, ...doc.data() })) // mapeia cada documento para um objeto com o ID e os dados
+      .sort((a, b) => { // ordena as doações por data, da mais recente para a mais antiga
+        const timeA = a.data ? a.data.toMillis() : 0; // converte a data para milissegundos
+        const timeB = b.data ? b.data.toMillis() : 0; // converte a data para milissegundos
+        return timeB - timeA; // ordena em ordem decrescente
       });
 
-    // Preencher a tabela
-    doacoes.forEach(d => {
-      const dataStr = d.data ? d.data.toDate().toLocaleDateString("pt-PT") : "—";
-      tabela.innerHTML += `
+    doacoes.forEach(d => { // para cada doação
+      const dataStr = d.data ? d.data.toDate().toLocaleDateString("pt-PT") : "—"; // formata a data para o formato português ou usa "—" se não houver data
+      tabela.innerHTML += ` 
         <tr>
           <td>${dataStr}</td>
           <td>${d.valor.toFixed(2)} €</td>
@@ -106,10 +104,10 @@ onAuthStateChanged(auth, async (user) => {
           <td>${d.estado}</td>
         </tr>
       `;
-    });
+    }); // adiciona uma linha na tabela para cada doação
 
-  } catch (error) {
-    console.error("Erro ao carregar histórico:", error);
+  } catch (error) { // em caso de erro ao obter as doações
+    console.error("Erro ao carregar histórico:", error); 
     tabela.innerHTML = `<tr><td colspan="4">Erro ao carregar histórico</td></tr>`;
   }
 });

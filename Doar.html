@@ -70,7 +70,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-let userLogged = null;
+let userLogged = null; 
 
 // 🔹 Estado de autenticação
 onAuthStateChanged(auth, (user) => {
@@ -92,20 +92,20 @@ document.getElementById("doacaoForm").addEventListener("submit", async (e) => {
     return;
   }
 
-  try {
-    await addDoc(collection(db, "doacoes"), {
-      uid: userLogged.uid,
-      valor: Number(document.getElementById("valor").value),
-      mensagem: document.getElementById("mensagem").value || "—",
-      estado: "concluida",
-      data: serverTimestamp()
-    });
+  try { // regista a doação no Firestore
+    await addDoc(collection(db, "doacoes"), { // guarda na coleção "doacoes" do Firestore
+      uid: userLogged.uid, // UID do utilizador
+      valor: Number(document.getElementById("valor").value), // valor da doação
+      mensagem: document.getElementById("mensagem").value || "—", // mensagem ou "—" se estiver vazia
+      estado: "concluida", // estado da doação
+      data: serverTimestamp() // timestamp do servidor
+    }); // cada doação é um novo documento na coleção, que tem que ter os campos acima
 
-    alert("Doação registada com sucesso!");
-    e.target.reset();
+    alert("Doação registada com sucesso!"); // notifica o utilizador do sucesso
+    e.target.reset(); // limpa o formulário
 
-  } catch (error) {
-    console.error(error);
+  } catch (error) { // em caso de erro
+    console.error(error); 
     alert("Erro ao registar doação.");
   }
 });
