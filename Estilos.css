@@ -221,61 +221,6 @@ footer {
     margin-right: 100px;
 }
 
-/*-------------------------Eventos--------------------------*/
-.eventos-container {
-    width: 80%;
-    margin: auto;
-    margin-top: 30px;
-}
-
-.eventos-cartao {
-    background: #295ba6;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #295ba6;
-}
-
-.eventos-insc{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background-color: white;
-    text-align: left;
-    max-width: 450px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px 5px #1d1d1d33;
-    margin: 0 auto;
-}
-
-.eventos-event {
-    border-left: 5px solid #4c9ce7;
-    padding-left: 15px;
-    margin-bottom: 20px;
-    width: 49%;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px 5px #1d1d1d33;
-    box-sizing: border-box;
-}
-
-.eventos-conteudo{
-    padding-bottom: 20px;
-}
-
-.eventos-conteudo p{
-    color: black;
-}
-
-.eventos-conteudo img {
-    height: 300px;
-    width: 500px;
-    transition: transform 0.5s ease;
-}
-
-
 /*---------doar----------*/
 
 * {
@@ -293,7 +238,7 @@ html, body {
  overflow-x: hidden;
 }
 .hero {
- background-image: url('juntos.jpeg');
+ background-image: url('Imagens/juntos.jpeg');
  background-size: cover;
  background-position: center;
  height: 100vh;
@@ -419,7 +364,7 @@ footer {
 }
  
 .hero-join {
-    background-image: url('faça-parte.jpg');
+    background-image: url('Imagens/faça-parte.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -618,10 +563,6 @@ footer {
 
 @media (max-width: 900px) 
 {
-    .eventos-event {
-        width: 100% !important;
-    }
-
     .hero-join {
         height: 40vh;
     }
@@ -688,13 +629,13 @@ footer {
     }
 
 }
-@keyframes ciclo {
-   0% { opacity: 0; }
-   5% { opacity: 1; }
-   25% { opacity: 1; }
-   30% { opacity: 0; }
-   100% { opacity: 0; }
+
+@media (max-width: 1350px){
+    .eventos-event {
+        width: 100% !important;
+    }
 }
+
 
 /* Container principal do login */
 .login-container {
