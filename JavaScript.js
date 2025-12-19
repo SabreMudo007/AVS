@@ -1,6 +1,6 @@
 //Eventos Inicio
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {//serve para ser executado só depois de todo o HTML estar carregado  
     const participarButtons = document.querySelectorAll('.participar-btn'); // Todos os botões "Inscrever-me"
     const modalBackdrop = document.getElementById('modal'); // O fundo escuro do pop-up
     const eventTitleSpan = document.getElementById('event-title');   // O título dentro do pop-up
